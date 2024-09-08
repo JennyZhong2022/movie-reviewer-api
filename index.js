@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.route.js";
 import movieRoutes from "./routes/comment.route.js";
+import cors from "cors";
 
 dotenv.config();
 
@@ -14,6 +15,8 @@ mongoose
   .catch((e) => console.log(e));
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
